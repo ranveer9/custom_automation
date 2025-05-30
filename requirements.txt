@@ -1,0 +1,8 @@
+os
+smtplib
+requests
+dotenv
+datetime
+bs4
+email.mime.text
+email.mime.multipart
