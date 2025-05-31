@@ -26,3 +26,8 @@ jobs:
     - name: Run your script
       run: |
         python custom_scraper.py 
+
+      env:
+        EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+        APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+        EMAIL_RECEIVER: ${{ SECRETS.EMAIL_RECEIVER }}
