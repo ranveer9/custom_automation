@@ -1,0 +1,28 @@
+name: Run Code Daily
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # This is a cron expression that runs the script every day at 3 am UTC (8 am IST).
+  workflow_dispatch: # Allows you to trigger it manually if needed.
+
+jobs:
+  run_code:
+    runs-on: ubuntu-latest  # Runs on the latest Ubuntu runner provided by GitHub.
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # This checks out your code from the repo.
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12'  # Specify the Python version you are using.
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt  # Install the dependencies from your requirements.txt file.
+
+    - name: Run your script
+      run: |
+        python custom_scraper.py 
