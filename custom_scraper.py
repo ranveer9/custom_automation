@@ -46,7 +46,7 @@ def send_email(headlines):
     Sends an email to the user.
     """
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"Your Daily Top 5 Chandigarh News - {datetime.now().strftime("%d/%m/%Y")}"
+    msg["Subject"] = f"Your Daily Top 10 Chandigarh News - {datetime.now().strftime("%d/%m/%Y")}"
     msg["From"] = EMAIL_SENDER
     msg["To"] = EMAIL_RECEIVER
 
